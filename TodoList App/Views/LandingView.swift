@@ -25,21 +25,9 @@ struct LandingView: View {
             VStack {
                 
                 List{
-                    ItemView(
-                        title: "Study for chemistry test",
-                        done: false
-                    )
-    
-                    ItemView(
-                        title: "Finish computer Science assignmnet",
-                        done: true
-                    )
-                    
-                    ItemView(
-                        title: "go for a run around campus",
-                        done: false
-                    )
-                   
+                    ItemView(currentItem: firstItem)
+                    ItemView(currentItem: secondItem)
+                    ItemView(currentItem: thirdItem)
                 
                     
                 }
