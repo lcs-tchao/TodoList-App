@@ -25,10 +25,32 @@ struct LandingView: View {
             VStack {
                 
                 List{
+                    Label(
+                        title: {
+                            Text("Study for chemistry test")
+                        }, icon: {
+                            Image(systemName: "circle")
+                        }
+                    )
+    
+                    Label(
+                        title: {
+                            Text("Finish computer science assignment")
+                        }, icon: {
+                            Image(systemName: "circle")
+                        }
+                    )
                     
-                    Text("Study for chemistry test")
-                    Text("Finish computer science assignment")
-                    Text("Go for a run around campus")
+                    Label(
+                        title: {
+                            Text("Go for a run around campus")
+                             }, icon: {
+                            Image(systemName: "circle")
+                        }
+                    )
+                    
+                    
+                    
                     
                 }
                 .searchable(text: $searchText)
