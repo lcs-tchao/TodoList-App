@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct TodoList_AppApp: App {
+struct TodoListApp: App {
     var body: some Scene {
         WindowGroup {
             LandingView()

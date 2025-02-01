@@ -28,21 +28,18 @@ struct LandingView: View {
             VStack {
                 
                 List($todos){ $todo in
-                    ItemView(currentItem: todo)
+                    ItemView(currentItem: $todo)
                     // Delete a to-do Item
                         .swipeActions {
                             Button(
                                 "Delete",
                                 role: .destructive,
                                 action: {
-                                    deleat(todo)
+                                    delete(todo)
                                 }
                             )
                         }
-                    // Tap to mark as done
-                        .onTapGesture {
-                            todo.done.toggle()
-                        }
+                
                     
                     
                     
@@ -83,7 +80,7 @@ struct LandingView: View {
         
     }
     
-    func deleat(_ todo: TodoItem){
+    func delete(_ todo: TodoItem){
         //Remove the provided to-do item from the array
         todos.removeAll {  currentItem in
               currentItem.id == todo.id
