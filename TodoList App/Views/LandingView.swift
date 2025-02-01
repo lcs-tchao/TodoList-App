@@ -1,0 +1,47 @@
+//
+//  ContentView.swift
+//  TodoList App
+//
+//  Created by Yuk Yeung Chao on 2025-02-01.
+//
+
+import SwiftUI
+
+struct LandingView: View {
+    // MARK: Stored properties
+    
+    // The item currently being addded
+    @State var newItemDescription: String = ""
+    
+    
+    //The search text
+    
+    @State var searchText = ""
+    
+    // MARK: computed properties
+    
+    var body: some View {
+        NavigationStack{
+            VStack {
+                
+                List{
+                    
+                }
+                .searchable(text: $searchText)
+                
+                HStack{}
+                    .padding(20)
+            
+                
+            }
+            .navigationTitle("To do")
+            
+            
+            
+        }
+    }
+}
+
+#Preview {
+    LandingView()
+}
