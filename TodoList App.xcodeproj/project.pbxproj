@@ -90,9 +90,9 @@
 				AFCDD33A2D4E84ED00A99E98 /* TodoListApp.swift */,
 				AFCDD3362D4E84ED00A99E98 /* Helpers */,
 				AFCDD3372D4E84ED00A99E98 /* Model */,
-				AFCDD3392D4E84ED00A99E98 /* Preview Content */,
 				AFCDD33B2D4E84ED00A99E98 /* Views */,
 				AFCDD33C2D4E84ED00A99E98 /* Assets.xcassets */,
+				AFCDD3392D4E84ED00A99E98 /* Preview Content */,
 			);
 			path = "TodoList App";
 			sourceTree = "<group>";
