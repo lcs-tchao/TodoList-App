@@ -24,7 +24,7 @@ struct LandingView: View {
     @Environment(\.modelContext) var modelContext
     
     //The list of to-do items
-    @State var todos: [TodoItem] = exampleItem
+    @Query var todos: [TodoItem]
     
     // MARK: computed properties
     
@@ -32,24 +32,19 @@ struct LandingView: View {
         NavigationStack{
             VStack {
                 
-                List($todos){ $todo in
-                    ItemView(currentItem: $todo)
-                    // Delete a to-do Item
-                        .swipeActions {
-                            Button(
-                                "Delete",
-                                role: .destructive,
-                                action: {
-                                    delete(todo)
-                                }
-                            )
-                        }
-                
-                    
-                    
-                    
+                List {
+                    ForEach(todos) { todo in
+                        
+                        ItemView(currentItem: todo)
+                 
+                    }
+                    .onDelete(perform: removeRows)
                 }
                 .searchable(text: $searchText)
+                
+                
+                
+                
                 
                 HStack{
                     TextField("Enter a to-do item", text: $newItemDescription)
@@ -81,14 +76,13 @@ struct LandingView: View {
         )
         
         // Append to the array
-        todos.append(todo)
+        modelContext.insert(todo)
         
     }
     
-    func delete(_ todo: TodoItem){
-        //Remove the provided to-do item from the array
-        todos.removeAll {  currentItem in
-              currentItem.id == todo.id
+    func removeRows(at offsets: IndexSet){
+        for offset in offsets{
+            modelContext.delete(todos[offset])
         }
     }
     
